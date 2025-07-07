@@ -1,6 +1,6 @@
 import re
 import warnings
-from typing import Optional, Dict, Any, ClassVar, FrozenSet
+from typing import Optional, Dict, Any, ClassVar, FrozenSet, List
 import dataclasses
 
 from .common import IntOrFloat
@@ -39,6 +39,7 @@ class SSAEvent:
     marginv: int = 0  #: Vertical margin
     effect: str = ""  #: Line effect
     type: str = "Dialogue"  #: Line type (Dialogue/Comment)
+    words: List["SSAEvent"] = dataclasses.field(default_factory=list)  #: List of word timestamps
 
     @property
     def FIELDS(self) -> FrozenSet[str]:
