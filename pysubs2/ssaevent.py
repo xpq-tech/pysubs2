@@ -27,7 +27,7 @@ class SSAEvent:
     """
     OVERRIDE_SEQUENCE: ClassVar = re.compile(r"{[^}]*}")
 
-    start: int = 0  #: Subtitle start time (in milliseconds)
+    start: int = -1  #: Subtitle start time (in milliseconds)
     end: int = 10000  #: Subtitle end time (in milliseconds)
     text: str = ""  #: Text of subtitle (with SubStation override tags)
     marked: bool = False  #: (SSA only)
